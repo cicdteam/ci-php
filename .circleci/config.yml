@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: docker:stable
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: docker login -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_PASS}
+      - run: docker build -t pure/ci-php:${CIRCLE_BRANCH} .
+      - run: docker push pure/ci-php:${CIRCLE_BRANCH}
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - build:
+          context: pure-global
+          filters:
+            branches:
+              ignore:
+                - master
