@@ -14,7 +14,7 @@ Installed
 Installed PHP extentions
 
 ```
-$ php -m
+$ docker run -it --rm pure/ci-php:7.2-alpine php -m
 [PHP Modules]
 apcu
 bcmath
@@ -33,7 +33,6 @@ intl
 json
 libxml
 mbstring
-mcrypt
 mongodb
 mysqlnd
 openssl
@@ -51,6 +50,7 @@ Reflection
 session
 SimpleXML
 sockets
+sodium
 SPL
 sqlite3
 standard
