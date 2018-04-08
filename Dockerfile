@@ -16,7 +16,6 @@ RUN set -e \
 		freetype \
 		libjpeg-turbo \
 		libpng \
-		libmcrypt \
 		postgresql-libs
 #
 # add build deps that will be removed
@@ -29,7 +28,6 @@ RUN set -e \
 		libpng-dev \
 		freetype-dev \
 		zlib-dev \
-		libmcrypt-dev \
 		postgresql-dev \
 #
 # add php extensions
@@ -58,7 +56,6 @@ RUN set -e \
 		bcmath \
 		gd \
 		zip \
-		mcrypt \
 # Cleanup to keep the images size small
 	&& apk del --no-cache .builddeps
 
