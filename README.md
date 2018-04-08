@@ -2,7 +2,7 @@
 
 Please look at branches and checkout to what you need
 
-### 7.1 Alpine version
+### 7.2 Alpine version
 
 Installed
 
